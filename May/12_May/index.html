@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FightCamp — 12 May update</title>
+<style>
+  :root {
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --text: #111111;
+    --text-muted: #6b7280;
+    --border: #e5e7eb;
+    --radius: 16px;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 6px 24px rgba(0, 0, 0, 0.05);
+    --max: 920px;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+  }
+  header.hero { margin-bottom: 40px; }
+  .date { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+  h1 {
+    font-size: clamp(28px, 4vw, 36px);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+  }
+  .lede { font-size: 16px; color: var(--text-muted); margin: 0; }
+  section.entry {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  section.entry h2 { font-size: 20px; margin: 0 0 8px; font-weight: 600; }
+  section.entry p { color: var(--text-muted); font-size: 15px; margin: 0 0 20px; }
+  .screens { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .screen { flex: 0 1 260px; max-width: 300px; }
+  .screen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .screen-single { display: flex; justify-content: center; }
+  .screen-single .screen { flex: 0 0 300px; }
+  @media (max-width: 640px) {
+    .container { padding: 32px 16px 48px; }
+    section.entry { padding: 24px 20px; }
+    .screen { flex-basis: 100%; max-width: 360px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <header class="hero">
+      <div class="date">12 May 2026</div>
+      <h1>FightCamp — May 12 update</h1>
+      <p class="lede">A few changes shipped this week.</p>
+    </header>
+
+    <section class="entry">
+      <h2>Add weight</h2>
+      <p>Weight entries now save to the database. New wheel picker pre-fills with your last weight.</p>
+      <div class="screens screen-single">
+        <div class="screen">
+          <img src="https://raw.githubusercontent.com/Fight-Camp/Updates/main/May/12_May/AddWeight.png" alt="Add weight wheel picker">
+        </div>
+      </div>
+    </section>
+
+    <section class="entry">
+      <h2>Home dashboard</h2>
+      <p>Home now shows your weight, camp status, burnout level, and recent milestones.</p>
+      <div class="screens">
+        <div class="screen">
+          <img src="https://raw.githubusercontent.com/Fight-Camp/Updates/main/May/12_May/Dashboard1.png" alt="Home dashboard 1">
+        </div>
+        <div class="screen">
+          <img src="https://raw.githubusercontent.com/Fight-Camp/Updates/main/May/12_May/Dashboard2.png" alt="Home dashboard 2">
+        </div>
+        <div class="screen">
+          <img src="https://raw.githubusercontent.com/Fight-Camp/Updates/main/May/12_May/Dashboard3.png" alt="Home dashboard 3">
+        </div>
+        <div class="screen">
+          <img src="https://raw.githubusercontent.com/Fight-Camp/Updates/main/May/12_May/Dashboard4.png" alt="Home dashboard 4">
+        </div>
+      </div>
+    </section>
+
+    <section class="entry">
+      <h2>Progress tab</h2>
+      <p>New tab with start / current / change at the top, a chart, and your full weight log.</p>
+      <div class="screens">
+        <div class="screen">
+          <img src="https://raw.githubusercontent.com/Fight-Camp/Updates/main/May/12_May/Progress1.png" alt="Progress page 1">
+        </div>
+        <div class="screen">
+          <img src="https://raw.githubusercontent.com/Fight-Camp/Updates/main/May/12_May/Progess2.png" alt="Progress page 2">
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
