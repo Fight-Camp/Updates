@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FightCamp — 8 June update</title>
+<style>
+  :root {
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --text: #111111;
+    --text-muted: #6b7280;
+    --border: #e5e7eb;
+    --radius: 16px;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 6px 24px rgba(0, 0, 0, 0.05);
+    --max: 920px;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+  }
+  header.hero { margin-bottom: 40px; }
+  .date { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+  h1 {
+    font-size: clamp(28px, 4vw, 36px);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 8px;
+  }
+  .lede { font-size: 16px; color: var(--text-muted); margin: 0; }
+  section.entry {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  section.entry h2 { font-size: 20px; margin: 0 0 8px; font-weight: 600; }
+  section.entry p { color: var(--text-muted); font-size: 15px; margin: 0 0 20px; }
+  section.entry ul { color: var(--text-muted); font-size: 15px; margin: 0 0 20px; padding-left: 20px; }
+  section.entry li { margin-bottom: 6px; }
+  .screens { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  .screen { flex: 0 1 260px; max-width: 300px; }
+  .screen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .screen-single { display: flex; justify-content: center; }
+  .screen-single .screen { flex: 0 0 300px; }
+  .pr-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .pr-link:hover { text-decoration: underline; }
+  @media (max-width: 640px) {
+    .container { padding: 32px 16px 48px; }
+    section.entry { padding: 24px 20px; }
+    .screen { flex-basis: 100%; max-width: 360px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <header class="hero">
+      <div class="date">8 June 2026</div>
+      <h1>FightCamp — June 8 update</h1>
+      <p class="lede">Progress page overhaul, native navigation, calendar weight log.</p>
+    </header>
+
+    <section class="entry">
+      <h2>Progress page — chart &amp; native nav</h2>
+      <p>Native iOS large title that collapses on scroll. Chart now shows daily weight dots, 3-day trending line, weight plan with dashed forecast, and a today marker.</p>
+      <ul>
+        <li>Native large title collapses to inline on scroll</li>
+        <li>Settings avatar in nav bar</li>
+        <li>Chart legend below (Daily Weight, Trending Weight, Weight Plan)</li>
+        <li>Solid lines up to today, dashed forecast past today</li>
+        <li>Start / Current / Change stat row</li>
+      </ul>
+      <div class="screens">
+        <div class="screen">
+          <img src="https://raw.githubusercontent.com/Fight-Camp/Updates/main/June/08_June/ProgressChart.png" alt="Progress page with chart">
+        </div>
+        <div class="screen">
+          <img src="https://raw.githubusercontent.com/Fight-Camp/Updates/main/June/08_June/ProgressFloatingHeading.png" alt="Progress page scrolled with floating heading">
+        </div>
+      </div>
+      <a class="pr-link" href="https://github.com/Fight-Camp/FightCamp/pull/new/feat/progress-page-overhaul">View PR &rarr;</a>
+    </section>
+
+    <section class="entry">
+      <h2>Weight Log — calendar view</h2>
+      <p>Full weight log page with monthly calendar (git-contribution style). Days with entries show a dot. Tap a day to filter. Custom filter chips, search, and pagination.</p>
+      <ul>
+        <li>Monthly calendar with navigation arrows</li>
+        <li>Blue dot on days with logged entries</li>
+        <li>Tap day to filter list to that date</li>
+        <li>Filter chips: All / This Week / This Month / With Notes</li>
+        <li>Pagination: loads 50 entries, "Show more" for rest</li>
+        <li>3-day trend delta on each row</li>
+      </ul>
+      <div class="screens screen-single">
+        <div class="screen">
+          <img src="https://raw.githubusercontent.com/Fight-Camp/Updates/main/June/08_June/WeightLogCalendar.png" alt="Weight Log with calendar">
+        </div>
+      </div>
+    </section>
+
+    <section class="entry">
+      <h2>Weight entry detail — edit &amp; delete</h2>
+      <p>Tap any weight log entry to see full details. Native iOS Form with Edit/Save toggle, weight wheel picker, date/time display, notes, and delete with confirmation.</p>
+      <ul>
+        <li>Native Form sections (Weight, Date &amp; Time, Notes)</li>
+        <li>Edit mode with weight wheel picker</li>
+        <li>Delete with confirmation dialog</li>
+        <li>Correct back navigation (no multi-push bug)</li>
+      </ul>
+      <div class="screens screen-single">
+        <div class="screen">
+          <img src="https://raw.githubusercontent.com/Fight-Camp/Updates/main/June/08_June/WeightLogEntryEdit.png" alt="Weight entry detail view">
+        </div>
+      </div>
+    </section>
+
+    <section class="entry">
+      <h2>Other improvements</h2>
+      <p>Supporting changes that shipped alongside the Progress overhaul.</p>
+      <ul>
+        <li>Menstruation section on Progress (phase indicator + edit sheet)</li>
+        <li>WeightEntry model: added notes and fightCampId fields</li>
+        <li>Weight logs are now fight-camp-specific</li>
+        <li>SessionManager: full CRUD for weight entries</li>
+        <li>MoreView: removed toolbar(.hidden) causing shared nav issues</li>
+        <li>Renamed ProgressView → ProgressTabView (fixed SwiftUI type collision)</li>
+      </ul>
+    </section>
+
+  </div>
+</body>
+</html>
